@@ -1,0 +1,11 @@
+bool isPowerOfTwo(int n){
+    long ans=1;
+    for(int i=1; i<=31; i++){
+        if(ans==n){
+            return true;
+        }
+    if(ans<INT_MAX/2)
+      ans=ans*2;
+    }
+    return false;
+}
