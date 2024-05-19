@@ -1,0 +1,28 @@
+int min(int x,int y){
+    if(x>y)
+    return y;
+   else
+   return x;
+}
+int jump(int* nums, int numsSize) {
+    int a[numsSize];
+    for(int i=0;i<numsSize;i++)
+       a[i]=INT_MAX;
+        a[0]=0;
+        for(int i=0;i<numsSize;i++)
+    {
+           int reach=nums[i];
+       
+        for(int j=1;j<=reach;j++)
+      {
+        if((i+j)<numsSize)
+        {
+          a[i+j]=min(a[i+j],a[i]+1);
+        }
+      } 
+    }
+ 
+    return a[numsSize-1];
+
+    
+}
